@@ -4,7 +4,7 @@
 
 ### Pre Install
 Ubuntu/Debian:
-`sudo apt-get install python3 python3-pip`
+`sudo apt-get install python3 python3-pip python3-venv`
 
 Fedora:
 `sudo dnf install python3 python3-pip`
