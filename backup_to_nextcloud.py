@@ -33,15 +33,16 @@ def generate_filename(name):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dir', help='directory to backup')
+    parser.add_argument('--dir', help='Directory to backup')
     parser.add_argument('--nc_url', help='Nextcloud URL')
-    parser.add_argument('--nc_user', help='Nextcloud User')
-    parser.add_argument('--nc_pw', help='Nextcloud Password')
+    parser.add_argument('--nc_user', help='Nextcloud user')
+    parser.add_argument('--nc_pw', help='Nextcloud password')
+    parser.add_argument('--nc_dir', help='Nextcloud directory')
     args = parser.parse_args()
 
     filename = generate_filename(args.dir)
     make_tarfile(filename, args.dir)
-    save_to_nextcloud(filename, args.nc_url, args.nc_user, args.nc_pw, "homeserver/" + filename)
+    save_to_nextcloud(filename, args.nc_url, args.nc_user, args.nc_pw, args.nc_dir + "/" + filename)
     os.remove(filename)
 
     print("Backup " + filename + " created")
