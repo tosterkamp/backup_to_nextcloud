@@ -65,7 +65,7 @@ if __name__ == "__main__":
     if args.nc_dir:
         dest_file_path_name = args.nc_dir + "/" + dest_file_path_name
 
-    if args.d == True:
+    if args.d:
         make_tarfile("tmp_" + args.source + ".tar.gz", args.source)
         args.source = "tmp_" + args.source + ".tar.gz"
         print(args.source)
@@ -73,7 +73,7 @@ if __name__ == "__main__":
 
     save_to_nextcloud(args.source, args.nc_url, args.nc_user, args.nc_pw, dest_file_path_name, args.nc_tag)
 
-    if args.d == True:
+    if args.d:
         os.remove(args.source)
 
     print("Backup " + dest_file_path_name + " created")
