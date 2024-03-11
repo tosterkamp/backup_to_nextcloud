@@ -58,7 +58,7 @@ if __name__ == "__main__":
     parser.add_argument('--nc_user', help='Nextcloud user', required=True)
     parser.add_argument('--nc_pw', help='Nextcloud password', required=True)
     parser.add_argument('--nc_dir', help='Nextcloud directory')
-    parser.add_argument('--nc_tag', help='Add daily, weekly or monthly tag to file', action='store_false')
+    parser.add_argument('--nc_tag', help='Add daily, weekly or monthly tag to file', action='store_true')
     args = parser.parse_args()
 
     dest_file_path_name = args.source + generate_postfix(args.postfix)
